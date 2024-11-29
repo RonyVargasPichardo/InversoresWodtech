@@ -1,0 +1,1261 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #43a047;
+    font-size: 17px;
+    padding: 10px;
+    transition: color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #f57c00;
+    font-size: 17.1px;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #f57c00;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #43a047 !important; 
+    font-size: 20px !important;
+    transition: color 0.3s ease !important;
+}
+
+.social-icons a:hover {
+    color: #f57c00 !important;
+}
+
+a {
+    color: #43a047;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f57c00;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #43a047;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f57c00;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-login {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #43a047;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-login:hover {
+    background-color: #f57c00;
+    color: #ffffff;
+    border-color: #f57c00;
+}
+
+
+
+
+
+/* Estilo del fondo del modal de inicio de sesión */
+.modal-login {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del modal */
+.modal-login-contenido {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Logo en la parte superior del modal */
+.logo-modal {
+    margin-bottom: 15px;
+}
+
+.logo-modal img {
+    max-width: 150px; /* Ajusta el tamaño del logo */
+}
+
+/* Título del modal */
+.modal-login-contenido h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+    border-bottom: 2px solid #f57c00;
+    padding-bottom: 10px;
+}
+
+/* Botón de cierre */
+.cerrar-modal-login {
+    color: #aaa;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.cerrar-modal-login:hover {
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.modal-login-contenido label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.modal-login-contenido input[type="email"],
+.modal-login-contenido input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.modal-login-contenido input[type="text"]:focus,
+.modal-login-contenido input[type="password"]:focus {
+    border-color: #43a047;
+    outline: none;
+}
+
+/* Estilos del botón de Ingresar */
+.btn-login-modal {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    width: 100%;
+    background-color: #43a047;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login-modal:hover {
+    background-color: #388e3c;
+}
+
+
+
+
+
+
+.hero {
+    position: relative;
+    height: 450px;
+    background-image: url('https://images.pexels.com/photos/1495580/pexels-photo-1495580.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #f57c00;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #43a047;
+}
+
+.productos {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.productos-contenedor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.bloque-inversores {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.banner-promocional {
+    display: flex;
+    align-items: center;
+    background-color: #f7f9fc;
+    color: #333333;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.banner-imagen {
+    flex: 0 0 380px;
+    margin-right: 20px;
+}
+
+.banner-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.banner-texto {
+    flex: 1;
+}
+
+.banner-texto h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #43a047;
+    margin-bottom: 10px;
+}
+
+.banner-texto p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555555;
+}
+
+.banner-texto .descuento {
+    font-weight: bold;
+    color: #f57c00;
+}
+
+.btn-oferta {
+    display: inline-block;
+    background-color: #43a047;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-oferta:hover {
+    background-color: #388e3c;
+}
+
+@media (max-width: 768px) {
+    .productos-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner-promocional {
+        flex-direction: column;
+        text-align: center;
+    }
+    .banner-imagen {
+        margin: 0 0 5px 0;
+        width: 90%;
+        flex: 0 0;
+    }
+}
+
+
+
+
+
+
+
+.bloque-inversores h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #43a047;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #f57c00;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.producto:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.producto h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.producto .especificaciones {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+.producto .precio {
+    font-size: 16px;
+    color: #43a047;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.producto .btn {
+    background-color: #43a047;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.producto .btn:hover {
+    background-color: #f57c00;
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+
+
+
+/* Estilo general del modal */
+.modal-compra {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-compra-contenido {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el encabezado del modal */
+.modal-compra-contenido h2 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    border-bottom: 2px solid #f57c00;
+}
+
+/* Botón de cierre del modal */
+.cerrar-modal-compra {
+    color: #aaa;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.cerrar-modal-compra:hover {
+    color: #333;
+}
+
+/* Estilo de la información del producto */
+#info-producto {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0 20px;
+    font-size: 16px;
+}
+
+#info-producto p {
+    margin: 5px 0;
+    color: #555555;
+}
+
+/* Campos de formulario */
+.modal-compra-contenido label {
+    font-size: 14px;
+    color: #333333;
+    margin-top: 10px;
+    display: block;
+}
+
+.modal-compra-contenido input[type="text"],
+.modal-compra-contenido input[type="tel"],
+.modal-compra-contenido input[type="email"],
+.modal-compra-contenido input[type="number"],
+.modal-compra-contenido textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+/* Botón de confirmar compra */
+.btn-enviar-compra {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #43a047;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar-compra:hover {
+    background-color: #388e3c;
+}
+
+.spinner {
+    margin-left: 10px;
+    border: 2px solid #f3f3f3; /* Gris claro */
+    border-top: 2px solid #4CAF50; /* Verde */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/* Estilo del modal de confirmacion-- fondo del modal */
+.modal-confirmacion {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Asegura que esté en el frente */
+}
+
+/* Estilo del contenido del modal */
+.modal-confirmacion-contenido {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del texto */
+.modal-confirmacion-contenido p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Estilo de la "x" de cierre */
+.cerrar-modal-confirmacion {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Estilo del botón de cierre */
+.modal-confirmacion-contenido button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-confirmacion-contenido button:hover {
+    background-color: #f57c00;;
+}
+
+
+
+
+
+
+
+/* Sección de Servicios */
+.servicios {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.servicios-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    min-height: 400px; /* Altura mínima para uniformidad */
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.servicio h3 {
+    font-size: 24px;
+    color: #43a047;
+    margin-bottom: 15px;
+}
+
+.servicio h4 {
+    font-size: 20px;
+    color: #43a047;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+
+.servicio p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.servicio ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.servicio ul li {
+    margin-bottom: 10px;
+    color: #666666;
+    font-size: 16px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.servicio ul li::before {
+    content: '✔';
+    color: #43a047;
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+}
+
+/* Ajuste responsivo para pantallas más anchas */
+@media (min-width: 768px) {
+    .servicios-contenedor {
+        flex-direction: row;
+    }
+}
+
+
+
+
+
+/* Sección de Órdenes de Servicio en Tarjetas */
+.ordenes-servicio {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.ordenes-servicio h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.ordenes-servicio p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de Tarjetas de Servicio */
+.tarjetas-servicio {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas pasen a la siguiente fila si es necesario */
+    gap: 20px; /* Espaciado uniforme entre tarjetas */
+    max-width: 1100px; /* Máximo ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    justify-content: space-between; /* Distribuir las tarjetas uniformemente */
+}
+
+/* Estilo de Cada Tarjeta */
+.tarjeta {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ajusta el borde redondeado de la imagen */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(25% - 20px); /* Tarjetas dinámicamente adaptables */
+    max-width: 300px; /* Tamaño máximo uniforme */
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+    padding: 10px; /* Espaciado interno */
+    min-height: 450px; /* Altura mínima para tarjetas */
+}
+
+/* Efecto Hover */
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las Imágenes */
+.icono img {
+    width: 100%; /* Imagen ocupa el ancho completo */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    border-radius: 10px 10px 0 0; /* Bordes superiores redondeados */
+}
+
+/* Título dentro de cada tarjeta */
+.tarjeta h3 {
+    font-size: 20px;
+    color: #43a047;
+    margin: 15px 0;
+}
+
+/* Descripción dentro de cada tarjeta */
+.tarjeta p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.5;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+}
+
+/* Botón de Solicitud de Servicio */
+.btn-solicitud {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 15px; /* Espaciado entre el texto y el botón */
+    background-color: #43a047;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centra el botón horizontalmente */
+}
+
+/* Hover del Botón */
+.btn-solicitud:hover {
+    background-color: #f57c00;
+    color: #ffffff;
+}
+
+
+
+/* Alineación en Pantallas Anchas */
+@media (min-width: 768px) {
+    .tarjetas-servicio {
+        flex-direction: row; /* Tarjetas en fila */
+    }
+}
+
+/*  Fondo del Modal de Órdenes de Servicio */
+.modal-servicio {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contenido del modal */
+.modal-servicio-contenido {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Título del modal */
+.modal-servicio-contenido h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+    border-bottom: 2px solid #f57c00;
+    padding-bottom: 10px;
+}
+
+/* Botón de cierre */
+.cerrar-modal-servicio {
+    color: #aaa;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.cerrar-modal-servicio:hover {
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.modal-servicio-contenido label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.modal-servicio-contenido input[type="text"],
+.modal-servicio-contenido input[type="email"],
+.modal-servicio-contenido input[type="tel"],
+.modal-servicio-contenido select,
+.modal-servicio-contenido textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.modal-servicio-contenido input[type="text"]:focus,
+.modal-servicio-contenido input[type="email"]:focus,
+.modal-servicio-contenido input[type="tel"]:focus,
+.modal-servicio-contenido select:focus,
+.modal-servicio-contenido textarea:focus {
+    border-color: #43a047;
+    outline: none;
+}
+
+/* Botón de Enviar Solicitud */
+.btn-enviar-servicio {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #43a047;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar-servicio:hover {
+    background-color: #388e3c;
+}
+
+
+
+
+
+/* Sección de Contacto */
+.contacto {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+.contacto-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-contacto label {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 15px;
+}
+
+.formulario-contacto input[type="text"],
+.formulario-contacto input[type="email"],
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+.btn-enviar-contacto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #43a047;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar-contacto:hover {
+    background-color: #f57c00;
+}
+
+/* Estilos de la Información de Contacto */
+.info-contacto {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.info-contacto h3 {
+    font-size: 20px;
+    color: #43a047;
+    margin-bottom: 15px;
+}
+
+/* Estilos para Redes Sociales */
+.redes-sociales {
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    color: #43a047;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #f57c00;
+}
+
+/* Disposición en columnas para pantallas grandes */
+@media (min-width: 768px) {
+    .contacto-contenedor {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .formulario-contacto, .info-contacto {
+        flex: 1;
+    }
+}
+
+
+
+
+
+
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ecf0f1;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+}
+
+/* Estilos para el menú hamburguesa y navegación móvil */
+.menu-toggle {
+    display: none; /* Oculto en pantallas grandes */
+    font-size: 34px;
+    background: none;
+    border: none;
+    color: #43a047;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajuste para mostrar el logo en la parte superior */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+    }
+
+    /* Centrar y ajustar el logo */
+    .logo {
+        margin-bottom: 10px; /* Espacio entre el logo y el resto del header */
+    }
+
+    /* Reorganiza los elementos debajo del logo */
+    .nav-menu, .header-right {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom:10px ;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Ajustes del tamaño del logo en tablet */
+    .logo img {
+        height: 70px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Oculta la navegación normal y muestra el botón hamburguesa */
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #ffffff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+    }
+    .nav-menu.active ul {
+        display: flex;
+    }
+    
+    /* Ajusta la disposición en el header */
+    .header-right {
+        display: none;
+    }
+
+    /* Estilo del menú hamburguesa en pantallas pequeñas */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ajustes para el logo en pantallas pequeñas */
+    .logo img {
+        height: 80px;
+    }
+}

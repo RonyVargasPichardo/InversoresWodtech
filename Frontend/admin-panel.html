@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <!-- Contenedor Principal -->
+    <div class="admin-panel">
+        <!-- Barra de Navegación -->
+        <nav class="admin-nav">
+            <h1>Panel de Administración</h1>
+            <ul>
+                <li><a href="#compras">Solicitudes de Compra</a></li>
+                <li><a href="#servicios">Solicitudes de Servicio</a></li>
+                <li><a href="#mensajes">Mensajes de Contacto</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <div class="admin-content">
+            <!-- Sección de Solicitudes de Compra -->
+            <section id="compras" class="admin-section">
+                <h2>Solicitudes de Compra</h2>
+                <div class="tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-compras">
+                            <!-- Datos dinámicos aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección de Solicitudes de Servicio -->
+            <section id="servicios" class="admin-section">
+                <h2>Solicitudes de Servicio</h2>
+                <div class="tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Tipo de Servicio</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-servicios">
+                            <!-- Datos dinámicos aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección de Mensajes de Contacto -->
+            <section id="mensajes" class="admin-section">
+                <h2>Mensajes de Contacto</h2>
+                <div class="tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Email</th>
+                                <th>Mensaje</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-mensajes">
+                            <!-- Datos dinámicos aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

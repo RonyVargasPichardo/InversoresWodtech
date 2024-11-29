@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversores Wodtech</title>
+    <!-- Incluir Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="inicio">
+        <div class="logo">
+            <a href="#inicio"><img src="./img/logo.jpg" alt="Logo Inversores Wodtech"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ordenes">Órdenes de Servicio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn-login" id="openModalBtn">Iniciar Sesión</a>
+        </div>
+        <!-- Botón de menú hamburguesa para móviles -->
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Bienvenido a Inversores Wodtech</h2>
+            <p>Explora nuestros inversores de corriente y accesorios de fabricación de alta calidad.</p>
+            <a href="#productos" class="btn">Comprar Ahora</a>
+        </div>
+    </section>
+
+    <section class="productos" id="productos">
+        <h2>Nuestros Productos</h2>
+    
+        <!-- Contenedor con productos y banner al lado derecho -->
+        <div class="productos-contenedor">
+            <!-- Bloque de Inversores Woctech -->
+            <div class="bloque-inversores woctech">
+                <h3>Inversores Woctech (Onda Cuadrada)</h3>
+                <div class="productos-grid">
+                     <!-- Aquí se cargan los inversores Woctech -->
+                </div>
+            </div>
+    
+            <!-- Separador -->
+            <div class="separator"></div>
+    
+            <!-- Bloque de Inversores Microlite -->
+            <div class="bloque-inversores microlite">
+                <h3>Inversores Microlite (Onda Pura)</h3>
+                <div class="productos-grid">
+                    <!-- Aquí se cargan los inversores Microlite -->
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-promocional">
+            <div class="banner-imagen">
+                <img src="https://images.pexels.com/photos/5699156/pexels-photo-5699156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Oferta especial">
+            </div>
+            <div class="banner-texto">
+                <h4>¡Oferta Especial por el mes de Diciembre!</h4>
+                <p>Obtén un <span class="descuento">20% de descuento</span> en tu primera compra.</p>
+                <a href="#" class="btn btn-oferta">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-contenedor">
+           <!-- Aquí se cargan los servicios -->
+        </div>
+    </section>
+    
+
+    <section id="ordenes" class="ordenes-servicio">
+        <h2>Órdenes de Servicio</h2>
+        <p>Elige el servicio que necesitas y solicita asistencia de nuestros técnicos especializados.</p>
+        
+        <div class="tarjetas-servicio">
+            <!-- Aquí se cargan las ordenes de servicios -->
+        </div>
+    </section>
+
+
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes alguna pregunta o necesitas más información? Completa el formulario o usa la información de contacto a continuación.</p>
+        
+        <div class="contacto-contenedor">
+            <!-- Formulario de Contacto -->
+            <div class="formulario-contacto">
+                <form id="formulario-contacto" action="#" method="post">
+                    <label for="nombre-contacto">Nombre:</label>
+                    <input type="text" id="nombre-contacto" name="nombre-contacto" required>
+                    
+                    <label for="email-contacto">Correo Electrónico:</label>
+                    <input type="email" id="email-contacto" name="email-contacto" required>
+                    
+                    <label for="mensaje-contacto">Mensaje:</label>
+                    <textarea id="mensaje-contacto" name="mensaje-contacto" rows="4" required></textarea>
+                    
+                    <button type="submit" class="btn-enviar-contacto">Enviar Mensaje</button>
+                </form>
+            </div>
+    
+            <!-- Información de Contacto -->
+            <div class="info-contacto">
+                <h3>Información de Contacto</h3>
+                <div id="info-dinamica-contacto">
+                    <!-- Aquí se cargará dinámicamente la información de contacto -->
+                </div>
+                <div class="redes-sociales" id="redes-sociales">
+                    <!-- Aquí se cargarán las redes sociales dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h4>Acerca de Nosotros</h4>
+                <p>Inversores Wodtech se dedica a ofrecer los mejores inversores y accesorios de alta calidad para satisfacer tus necesidades energéticas.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#ordenes">Órdenes de Servicio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p>Email: <a href="mailto:info@inversoreswodtech.com">info@inversoreswodtech.com</a></p>
+                <p>Teléfono: <a href="tel:+123456789">+1809 559 6789</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Inversores Wodtech. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+      
+<!-- Modal de Inicio de Sesión -->
+<div id="modal-login" class="modal-login" style="display: none;">
+    <div class="modal-login-contenido">
+        <span class="cerrar-modal-login">&times;</span>
+
+        <!-- Logo en la parte superior -->
+        <div class="logo-modal">
+            <img src="./img/logo.jpg" alt="Logo" />
+        </div>
+
+        <h2>Iniciar Sesión</h2>
+
+        <form id="formulario-login">
+            <label for="email-login">Correo Electrónico</label>
+            <input type="email" id="email-login" name="email" required>
+
+            <label for="password-login">Contraseña</label>
+            <input type="password" id="password-login" name="password" required>
+
+            <button type="submit" class="btn-login-modal">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Modal de Pedido de Compra -->
+<div id="modal-compra" class="modal-compra">
+    <div class="modal-compra-contenido">
+        <span class="cerrar-modal-compra">&times;</span>
+        <h2>Comprar Inversor</h2>
+        
+        <!-- Información dinámica del producto -->
+        <div id="info-producto">
+            <p><strong>Nombre:</strong> <span id="producto-nombre"></span></p>
+            <p><strong>Precio:</strong> <span id="producto-precio"></span></p>
+            <p><strong>Capacidad:</strong> <span id="producto-capacidad"></span></p>
+        </div>
+
+        <form id="formulario-compra" action="#" method="post">
+            <!-- Campo: Nombre Completo -->
+            <label for="nombre-compra">Nombre Completo:</label>
+            <input type="text" id="nombre-compra" name="nombre-compra" required placeholder="Ej: Juan Pérez">
+
+            <!-- Campo: Correo Electrónico -->
+            <label for="email-compra">Correo Electrónico:</label>
+            <input type="email" id="email-compra" name="email-compra" required placeholder="Ej: ejemplo@correo.com">
+
+            <!-- Campo: Número de Teléfono -->
+            <label for="telefono-compra">Número de Teléfono:</label>
+            <input type="tel" id="telefono-compra" name="telefono-compra" required placeholder="Ej: 123-456-7890">
+
+            <!-- Campo: Dirección -->
+            <label for="direccion-compra">Dirección:</label>
+            <input type="text" id="direccion-compra" name="direccion-compra" required placeholder="Ej: Calle Principal #123, Ciudad">
+
+            <!-- Campo: Cantidad -->
+            <label for="cantidad-compra">Cantidad:</label>
+            <input type="number" id="cantidad-compra" name="cantidad-compra" min="1" required>
+
+            <!-- Campo: Comentarios -->
+            <label for="comentarios-compra">Comentarios:</label>
+            <textarea id="comentarios-compra" name="comentarios-compra" rows="4" placeholder="Escribe algún comentario adicional..."></textarea>
+
+            <!-- Botón de Confirmar con Spinner -->
+            <button id="btn-confirmar-compra" class="btn-enviar-compra" type="submit">
+                Confirmar Compra
+                <span id="spinner-compra" class="spinner" style="display: none;"></span>
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal de Confirmación -->
+<div id="modal-confirmacion" class="modal-confirmacion">
+    <div class="modal-confirmacion-contenido">
+        <span class="cerrar-modal-confirmacion">&times;</span>
+        <h2 id="modal-confirmacion-titulo"></h2>
+        <p id="modal-confirmacion-mensaje"></p>
+        <button id="modal-confirmacion-ok">OK</button>
+    </div>
+</div>
+
+
+
+
+
+
+ <!-- Modal de Órdenes de Servicio -->
+<div id="modal-solicitud-servicio" class="modal-servicio">
+    <div class="modal-servicio-contenido">
+        <span class="cerrar-modal-servicio">&times;</span>
+        <h2>Solicitar Servicio</h2>
+
+        <form id="formulario-servicio" action="#" method="post">
+            <!-- Campo: Nombre -->
+            <label for="nombre-servicio">Nombre Completo:</label>
+            <input type="text" id="nombre-servicio" name="nombre-servicio" required>
+
+            <!-- Campo: Correo Electrónico -->
+            <label for="email-servicio">Correo Electrónico:</label>
+            <input type="email" id="email-servicio" name="email-servicio" required>
+
+            <!-- Campo: Número de Teléfono -->
+            <label for="telefono-servicio">Número de Teléfono:</label>
+            <input type="tel" id="telefono-servicio" name="telefono-servicio" required
+                   placeholder="Ej: 123-456-7890">
+
+            <!-- Campo: Dirección -->
+            <label for="direccion-servicio">Dirección:</label>
+            <input type="text" id="direccion-servicio" name="direccion-servicio" required
+                   placeholder="Ej: Calle Principal #123, Ciudad">
+
+            <!-- Campo: Tipo de Servicio -->
+            <label for="tipo-servicio">Tipo de Servicio:</label>
+            <select id="tipo-servicio" name="tipo-servicio" required>
+                <option value="instalacion">Instalación de Inversores</option>
+                <option value="mantenimiento">Mantenimiento Preventivo</option>
+                <option value="reparacion">Reparación de Equipos</option>
+                <option value="servicioTecnico">Servicio Técnico</option>
+            </select>
+
+            <!-- Campo: Descripción -->
+            <label for="descripcion-servicio">Descripción del Problema o Solicitud:</label>
+            <textarea id="descripcion-servicio" name="descripcion-servicio" rows="4" required></textarea>
+
+            <!-- Botón de Envío -->
+            <button type="submit" class="btn-enviar-servicio">Enviar Solicitud</button>
+        </form>
+    </div>
+</div>
+
+
+
+    
+    <script src="./code.js"></script>
+</body>
+</html>

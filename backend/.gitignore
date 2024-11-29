@@ -1,0 +1,5 @@
+# Ignorar el archivo .env para proteger credenciales y configuraciones sensibles
+.env
+
+# Puedes agregar otros archivos o carpetas que quieras ignorar aquí
+node_modules/
